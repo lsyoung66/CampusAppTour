@@ -1,0 +1,28 @@
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.campus_app_tour">
+    <!-- The INTERNET permission is required for development. Specifically,
+         the Flutter tool needs it to communicate with the running application
+         to allow setting breakpoints, to provide hot reload, etc.
+    -->
+    <uses-sdk
+        android:minSdkVersion="21"
+        android:targetSdkVersion="33" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <application
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name="com.kakao.sdk.flutter.AuthCodeCustomTabsActivity"
+            android:exported="true">
+            <intent-filter android:label="flutter_web_auth">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <!-- "kakao${YOUR_NATIVE_APP_KEY}://oauth" 형식의 앱 실행 스킴 설정 -->
+                <!-- 카카오 로그인 Redirect URI -->
+                <data android:scheme="kakao80ea3338e9a04d2545af91f8a36730f4" android:host="oauth" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>
